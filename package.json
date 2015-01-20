@@ -2,8 +2,8 @@
   "name": "zero",
   "private": true,
   "version": "0.0.0",
-  "description": "a Sails application",
-  "keywords": [],
+  "description": "Ground Zero",
+  "keywords": ["zero","sails.js","angular.js","bootstrap","require.js"],
   "dependencies": {
     "sails": "~0.10.5",
     "sails-disk": "~0.10.0",
@@ -30,8 +30,8 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/anonymous node/sails user/zero.git"
+    "url": "git://github.com/JerryYangJin/zero.git"
   },
-  "author": "anonymous node/sails user",
-  "license": ""
+  "author": "Jerry Yang Jin",
+  "license": "MIT"
 }
