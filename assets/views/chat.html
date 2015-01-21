@@ -1,24 +1,25 @@
-<div ng-controller="ChatCtrl">
-  <div class="header">
-    <h1 id="main-title" class="container">angularSails Demo App.</h1>
-    <h3 class="container">Open another tab and chat away!</h3>
-  </div>
-
-  <div class="main container clearfix">
-    <div>
-      <h2>Chat Support</h2>
-      <form ng-submit="publishMsg()">
-        <label>Add a message:</label>
-        <input type="text" ng-model="newMessage.body"></input>
-        <button ng-click="postMessage(newMessage)">Submit</button>
+<div ng-controller="ChatCtrl" class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Chat</h3>
+    </div>
+    <div class="panel-body">
+      <form class="form-horizontal">
+        <div class="input-group">
+          <input ng-model="newMessage.body" type="text" class="form-control" placeholder="Type your message"></input>
+          <span class="input-group-btn">
+            <button ng-click="postMessage(newMessage)" type="submit" class="btn btn-info">Send</button>
+          </span>
+        </div>
       </form>
-      <ul>
-        <li class="message" ng-repeat="message in messages | orderBy: '-createdAt'">
+      <br>
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="message in messages | orderBy: '-createdAt'">
           <span><strong>{{message.author}}</strong></span>
-          <em>posted at {{message.updatedAt | date:'hh:mm a'}}
-            <p>{{message.body}}</p>
-        </li>
-      </ul>
+          posted at {{message.updatedAt | date:'hh:mm a'}} <br>
+            {{message.body}}
+          </li>
+        </ul>
     </div>
   </div>
 </div>

@@ -5,15 +5,19 @@ Another Sails.js + Angular.js boilerplate
 
 Dependencies
 ------------
-* sails.js 0.10.5
-* angular.js 1.3.9
-* bootstrap 3.3.2
-* jquery 2.1.3
+* Sails.js 0.10.5
+* Angular.js 1.3.9
+* Bootstrap 3.3.2
+* jQuery 2.1.3
 
 Usage
 -----
 ```shell
 git clone https://github.com/JerryYangJin/zero.git
+cd zero
+npm install
+bower install
+sails lift
 ```
 
 License
