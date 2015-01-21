@@ -9,6 +9,8 @@ module.exports = {
 
   attributes: {
 
+    title : {type : 'string', required : true},
+    comments : { collection : 'Comment', via : 'post'}
+
   }
 };
-
