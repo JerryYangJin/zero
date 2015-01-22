@@ -9,4 +9,10 @@ angular.module('zero',['ngRoute','sails.io'])
     controller: 'ChatCtrl'
   });
 
+  $routeProvider.
+  when('/about', {
+    templateUrl: 'views/about.html',
+    controller: 'ChatCtrl'
+  });
+
 }]);

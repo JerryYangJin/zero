@@ -34,31 +34,27 @@ module.exports = function(grunt) {
 		},
 		bower: {
 			files: [
-				{
+				{ // copy js library
 					expand:true,
 					flatten: true,
 					cwd: 'bower_components',
 					src: [
 						'angular/angular.js',
-						//'angular/angular.js.map'
 						'angular-route/angular-route.js',
-						//'angular-route/angular-route.js.map',
 						'angular-resource/angular-resource.js',
-						//'angular-resource/angular-resource.js.map',
 						//'angular-sanitize/angular-sanitize.js',
-						//'angular-sanitize/angular-sanitize.js.map',
 						//'angular-bootstrap/ui-bootstrap-tpls.js',
 						//'angular-bootstrap/ui-bootstrap.js',
 						//'requirejs/require.js'
 						//'requirejs-domready/domReady.js',
 						//'requirejs-text/text.js',
+						'angularSails/dist/ngsails.io.js',
 						'bootstrap/dist/js/bootstrap.js',
 						'jquery/dist/jquery.js'
-						//'jquery/dist/jquery.map'
 					],
 					dest: 'assets/js/dependencies'
 				},
-				{
+				{ // copy css
 					expand:true,
 					flatten: true,
 					cwd: 'bower_components',
@@ -67,6 +63,13 @@ module.exports = function(grunt) {
 					],
 					dest: 'assets/styles'
 				},
+				{ // copy fonts
+					expand:true,
+					flatten: true,
+					cwd: 'bower_components/bootstrap/dist/fonts',
+					src: ['*'],
+					dest: 'assets/fonts'
+				}
 			]
 		}
 	});
