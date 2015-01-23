@@ -2,7 +2,7 @@
 angular.module('zero',['ngRoute','sails.io'])
 
 //config routing
-.config(['$routeProvider',function($routeProvider) {
+.config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider) {
   $routeProvider.
   when('/', {
     templateUrl: 'views/chat.html',
@@ -12,7 +12,13 @@ angular.module('zero',['ngRoute','sails.io'])
   $routeProvider.
   when('/about', {
     templateUrl: 'views/about.html',
-    controller: 'ChatCtrl'
+    controller: 'AboutCtrl'
   });
+
+  $routeProvider.otherwise({redirectTo: '/'});
+
+  $locationProvider
+    .html5Mode(true)
+    .hashPrefix('!');
 
 }]);

@@ -48,7 +48,7 @@ module.exports = function(grunt) {
 						//'requirejs/require.js'
 						//'requirejs-domready/domReady.js',
 						//'requirejs-text/text.js',
-						'angularSails/dist/ngsails.io.js',
+						//'angularSails/dist/ngsails.io.js',
 						'bootstrap/dist/js/bootstrap.js',
 						'jquery/dist/jquery.js'
 					],
