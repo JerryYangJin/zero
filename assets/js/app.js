@@ -17,8 +17,6 @@ angular.module('zero',['ngRoute','sails.io'])
 
   $routeProvider.otherwise({redirectTo: '/'});
 
-  $locationProvider
-    .html5Mode(true)
-    .hashPrefix('!');
+  $locationProvider.html5Mode(true);
 
 }]);
