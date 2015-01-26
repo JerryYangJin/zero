@@ -3,6 +3,18 @@ Ground Zero
 
 Another Sails.js + Angular.js boilerplate
 
+Usage
+-----
+```shell
+wget https://github.com/JerryYangJin/zero/archive/master.zip zero.zip
+unzip zero.zip
+cd zero
+git init
+npm install
+bower install
+sails lift
+```
+
 Dependencies
 ------------
 * Sails.js 0.10.5
@@ -10,14 +22,102 @@ Dependencies
 * Bootstrap 3.3.2
 * jQuery 2.1.3
 
-Usage
------
-```shell
-git clone https://github.com/JerryYangJin/zero.git
-cd zero
-npm install
-bower install
-sails lift
+Changes made on top of sails project
+------------------------------------
+* Add bower.json to install dependencies like angular, bootstrap
+
+* Register new task bower to copy files to assets
+
+```js
+//new file bower.js in tasks/register
+module.exports = function (grunt) {
+  grunt.registerTask('bower', [
+  'copy:bower'
+  ]);
+};
+//update default.js in tasks/register (can be added to other task like build/prod)
+module.exports = function (grunt) {
+  grunt.registerTask('default', [
+  'bower',
+  'compileAssets',
+  'linkAssets',
+  'watch'
+  ]);
+};
+```
+* Config bower task in tasks/config/copy.js
+
+```js
+bower: {
+  files: [
+  { // copy js library
+    expand:true,
+    flatten: true,
+    cwd: 'bower_components',
+    src: [
+    'angular/angular.js',
+    'angular-route/angular-route.js',
+    'angular-resource/angular-resource.js',
+    'bootstrap/dist/js/bootstrap.js',
+    'jquery/dist/jquery.js'
+    ],
+    dest: 'assets/js/dependencies'
+  },
+  { // copy css
+    expand:true,
+    flatten: true,
+    cwd: 'bower_components',
+    src: [
+    'bootstrap/dist/css/bootstrap.min.css'
+    ],
+    dest: 'assets/styles'
+  },
+  { // copy fonts
+    expand:true,
+    flatten: true,
+    cwd: 'bower_components/bootstrap/dist/fonts',
+    src: ['*'],
+    dest: 'assets/fonts'
+  }
+
+```
+
+* Update layout.ejs, homepage.ejs for angular
+
+```html
+<html ng-app="zero">
+<head>
+<base href="/">
+```
+
+```html
+<div ng-view></div>
+```
+
+* Config js injection order
+
+```js
+var jsFilesToInject = [
+
+// Load sails.io before everything else
+'js/dependencies/sails.io.js',
+// Dependencies like jQuery, or Angular are brought in here
+'js/dependencies/jquery.js',
+'js/dependencies/angular.js',
+'js/dependencies/**/*.js',
+// All of the rest of your client-side js files
+// will be injected here in no particular order.
+'js/**/*.js'
+];
+```
+
+* Add directories in assets/js for angular
+```
+--js
+--|--controllers
+--|--directives
+--|--services
+--|--app.js
 ```
 
 License

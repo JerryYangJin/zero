@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "description": "Ground Zero",
-  "keywords": ["zero","sails.js","angular.js","bootstrap","require.js"],
+  "keywords": ["zero","sails.js","angular.js","bootstrap"],
   "dependencies": {
     "sails": "~0.10.5",
     "sails-disk": "~0.10.0",
