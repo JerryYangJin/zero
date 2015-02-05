@@ -20,6 +20,7 @@ Dependencies
 * Sails.js 0.10.5
 * Angular.js 1.3.9
 * Bootstrap 3.3.2
+* Font Awesome 4.3.0
 * jQuery 2.1.3
 
 Changes made on top of sails project
@@ -56,28 +57,10 @@ bower: {
     cwd: 'bower_components',
     src: [
     'angular/angular.js',
-    'angular-route/angular-route.js',
-    'angular-resource/angular-resource.js',
     'bootstrap/dist/js/bootstrap.js',
     'jquery/dist/jquery.js'
     ],
     dest: 'assets/js/dependencies'
-  },
-  { // copy css
-    expand:true,
-    flatten: true,
-    cwd: 'bower_components',
-    src: [
-    'bootstrap/dist/css/bootstrap.min.css'
-    ],
-    dest: 'assets/styles'
-  },
-  { // copy fonts
-    expand:true,
-    flatten: true,
-    cwd: 'bower_components/bootstrap/dist/fonts',
-    src: ['*'],
-    dest: 'assets/fonts'
   }
 
 ```
@@ -98,7 +81,6 @@ bower: {
 
 ```js
 var jsFilesToInject = [
-
 // Load sails.io before everything else
 'js/dependencies/sails.io.js',
 // Dependencies like jQuery, or Angular are brought in here
@@ -109,15 +91,6 @@ var jsFilesToInject = [
 // will be injected here in no particular order.
 'js/**/*.js'
 ];
-```
-
-* Add directories in assets/js for angular
-```
---js
---|--controllers
---|--directives
---|--services
---|--app.js
 ```
 
 License

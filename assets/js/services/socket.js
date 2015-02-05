@@ -17,7 +17,7 @@ angular.module('zero')
 
   function _loadMessages(){
     return $sailsSocket.get('/message').then(function(res){
-      //_messages = [];
+      _messages = [];
       angular.forEach(res.data,function(msg){
         _messages.push(msg)
       });

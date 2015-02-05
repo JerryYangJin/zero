@@ -1,5 +1,5 @@
 angular.module('zero')
-.controller('ChatCtrl',function($scope,$sailsSocket,Messages){
+.controller('SocketController',function($scope,$sailsSocket,Messages){
   "use strict";
 
   $scope.newMessage = {};

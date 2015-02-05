@@ -59,15 +59,19 @@ module.exports = function(grunt) {
 					flatten: true,
 					cwd: 'bower_components',
 					src: [
-						'bootstrap/dist/css/bootstrap.min.css'
+						'bootstrap/dist/css/bootstrap.min.css',
+						'font-awesome/css/font-awesome.min.css'
 					],
 					dest: 'assets/styles'
 				},
 				{ // copy fonts
 					expand:true,
 					flatten: true,
-					cwd: 'bower_components/bootstrap/dist/fonts',
-					src: ['*'],
+					cwd: 'bower_components',
+					src: [
+						'bootstrap/dist/fonts/*',
+						'font-awesome/fonts/*'
+					],
 					dest: 'assets/fonts'
 				}
 			]

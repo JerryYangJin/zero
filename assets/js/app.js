@@ -5,14 +5,32 @@ angular.module('zero',['ngRoute','sails.io'])
 .config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider) {
   $routeProvider.
   when('/', {
-    templateUrl: 'views/chat.html',
-    controller: 'ChatCtrl'
+    templateUrl: 'views/index.html',
+    controller: 'IndexController'
   });
 
   $routeProvider.
-  when('/about', {
-    templateUrl: 'views/about.html',
-    controller: 'AboutCtrl'
+  when('/server', {
+    templateUrl: 'views/server.html',
+    controller: 'ServerController'
+  });
+
+  $routeProvider.
+  when('/database', {
+    templateUrl: 'views/database.html',
+    controller: 'DatabaseController'
+  });
+
+  $routeProvider.
+  when('/socket', {
+    templateUrl: 'views/socket.html',
+    controller: 'SocketController'
+  });
+
+  $routeProvider.
+  when('/settings', {
+    templateUrl: 'views/settings.html',
+    controller: 'SettingsController'
   });
 
   $routeProvider.otherwise({redirectTo: '/'});
