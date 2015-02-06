@@ -1,6 +1,6 @@
 angular.module('zero')
 
-.factory('Messages',function($sailsSocket){
+.factory('Messages',['$sailsSocket',function($sailsSocket){
 
   var _messages = [];
 
@@ -41,4 +41,4 @@ angular.module('zero')
     send : _sendMessage
   };
 
-});
+}]);

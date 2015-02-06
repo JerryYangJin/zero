@@ -1,6 +1,6 @@
 angular.module('zero')
-.controller('IndexController',function($scope,$sailsSocket,Messages){
+.controller('IndexController',[function(){
   "use strict";
-  
 
-});
+
+}]);

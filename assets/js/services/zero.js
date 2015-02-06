@@ -1,6 +1,6 @@
 angular.module('zero')
 
-.factory('Zero',function($sailsSocket){
+.factory('Zero',['$sailsSocket',function($sailsSocket){
 
   function _loadServer(){
     return $sailsSocket.get('/zero/server').then(function(res){
@@ -24,4 +24,4 @@ angular.module('zero')
     database : _loadDatabase
   };
 
-});
+}]);

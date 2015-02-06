@@ -1,5 +1,5 @@
 angular.module('zero')
-.controller('ServerController',function($scope,Zero){
+.controller('ServerController',['$scope','Zero',function($scope,Zero){
   "use strict";
 
   Zero.server().then(function(server){
@@ -7,4 +7,4 @@ angular.module('zero')
     $scope.json = JSON.stringify(server,undefined,4);
   });
 
-});
+}]);

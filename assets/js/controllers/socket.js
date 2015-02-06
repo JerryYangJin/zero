@@ -1,5 +1,5 @@
 angular.module('zero')
-.controller('SocketController',function($scope,$sailsSocket,Messages){
+.controller('SocketController',['$scope','$sailsSocket','Messages',function($scope,$sailsSocket,Messages){
   "use strict";
 
   $scope.newMessage = {};
@@ -15,4 +15,4 @@ angular.module('zero')
 
   }
 
-});
+}]);

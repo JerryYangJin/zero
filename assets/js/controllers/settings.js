@@ -1,5 +1,5 @@
 angular.module('zero')
-.controller('SettingsController',function($scope){
+.controller('SettingsController',['$scope',function($scope){
   "use strict";
 
-});
+}]);
