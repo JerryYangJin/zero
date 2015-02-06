@@ -1,40 +1,66 @@
 //create a new module
-angular.module('zero',['ngRoute','sails.io'])
+angular.module('zero',['ui.router','sails.io'])
 
 //config routing
-.config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider) {
-  $routeProvider.
-  when('/', {
-    templateUrl: 'views/index.html',
-    controller: 'IndexController'
-  });
+.config(['$stateProvider','$urlRouterProvider','$locationProvider',
+        function($stateProvider,$urlRouterProvider,$locationProvider) {
 
-  $routeProvider.
-  when('/server', {
-    templateUrl: 'views/server.html',
-    controller: 'ServerController'
-  });
-
-  $routeProvider.
-  when('/database', {
-    templateUrl: 'views/database.html',
-    controller: 'DatabaseController'
-  });
-
-  $routeProvider.
-  when('/socket', {
-    templateUrl: 'views/socket.html',
-    controller: 'SocketController'
-  });
-
-  $routeProvider.
-  when('/settings', {
-    templateUrl: 'views/settings.html',
-    controller: 'SettingsController'
-  });
-
-  $routeProvider.otherwise({redirectTo: '/'});
+  $urlRouterProvider.otherwise('/');
 
   $locationProvider.html5Mode(true);
+
+  $stateProvider
+
+    .state('home', {
+        url: '/',
+        templateUrl: 'views/index.html',
+        controller: 'IndexController'
+    })
+
+    .state('server', {
+        url: '/server',
+        templateUrl: 'views/server.html',
+        controller: 'ServerController'
+    })
+
+    .state('database', {
+        url: '/database',
+        templateUrl: 'views/database.html',
+        controller: 'DatabaseController'
+    })
+
+    .state('socket', {
+        url: '/socket',
+        templateUrl: 'views/socket.html',
+        controller: 'SocketController'
+    })
+
+    .state('settings', {
+        url: '/settings',
+        templateUrl: 'views/settings.html',
+        controller: 'SettingsController'
+    })
+
+    .state('settings.general', {
+        url: 'general',
+        templateUrl: 'views/settings/general.html',
+        controller: 'SettingsController'
+    })
+
+    .state('settings.mail', {
+        url: '/mail',
+        templateUrl: 'views/settings/mail.html',
+        controller: 'SettingsController'
+    })
+
+    .state('settings.phone', {
+        url: '/phone',
+        templateUrl: 'views/settings/phone.html',
+        controller: 'SettingsController'
+    })
+
+
+  //$locationProvider.html5Mode(true);
+
 
 }]);

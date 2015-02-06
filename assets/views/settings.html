@@ -7,14 +7,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand"><span class="fa fa-cogs fa-lg"></span> Settings</a>
+      <a class="navbar-brand"><span class="fa fa-cogs fa-lg"></span></a>
     </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
 
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/"><span class="fa fa-home fa-lg"></span> Home</a></li>
+          <li><a ui-sref="home"><span class="fa fa-home fa-lg"></span></a></li>
         </ul>
       </div>
   </div>
@@ -22,5 +22,16 @@
 
 
 <div class="container">
-
+  <div class="row">
+    <div class="col-md-3">
+      <ul class="list-group">
+        <li class="list-group-item"><a ui-sref=".general">General</a></li>
+        <li class="list-group-item"><a ui-sref=".phone">Phone</a></li>
+        <li class="list-group-item"><a ui-sref=".mail">Mail</a></li>
+      </ul>
+    </div>
+    <div class="col-md-9">
+      <div ui-view></div>
+    </div>
+  </div>
 </div>

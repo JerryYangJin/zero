@@ -40,14 +40,11 @@ module.exports = function(grunt) {
 					cwd: 'bower_components',
 					src: [
 						'angular/angular.js',
-						'angular-route/angular-route.js',
-						'angular-resource/angular-resource.js',
+						//'angular-route/angular-route.js',
+						'angular-ui-router/release/angular-ui-router.js',
 						//'angular-sanitize/angular-sanitize.js',
 						//'angular-bootstrap/ui-bootstrap-tpls.js',
 						//'angular-bootstrap/ui-bootstrap.js',
-						//'requirejs/require.js'
-						//'requirejs-domready/domReady.js',
-						//'requirejs-text/text.js',
 						//'angularSails/dist/ngsails.io.js',
 						'bootstrap/dist/js/bootstrap.js',
 						'jquery/dist/jquery.js'
@@ -69,7 +66,7 @@ module.exports = function(grunt) {
 					flatten: true,
 					cwd: 'bower_components',
 					src: [
-						'bootstrap/dist/fonts/*',
+						//'bootstrap/dist/fonts/*',
 						'font-awesome/fonts/*'
 					],
 					dest: 'assets/fonts'
