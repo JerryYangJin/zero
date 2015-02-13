@@ -42,7 +42,7 @@ angular.module('zero',['ui.router','sails.io'])
     })
 
     .state('settings.general', {
-        url: 'general',
+        url: '/general',
         templateUrl: 'views/settings/general.html',
         controller: 'SettingsController'
     })

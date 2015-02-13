@@ -17,11 +17,16 @@ sails lift
 
 Dependencies
 ------------
-* Sails.js 0.10.5
-* Angular.js 1.3.9
+* Sails.js 0.11.0
+* Angular.js 1.3.13
 * Bootstrap 3.3.2
 * Font Awesome 4.3.0
 * jQuery 2.1.3
+
+
+Minification Error
+------------------
+Production mode does not work for now due to minification, awaiting fix from angular-ui.
 
 Changes made on top of sails project
 ------------------------------------

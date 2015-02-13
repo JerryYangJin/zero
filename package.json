@@ -5,8 +5,8 @@
   "description": "Ground Zero",
   "keywords": ["zero","sails.js","angular.js","bootstrap"],
   "dependencies": {
-    "sails": "~0.10.5",
-    "sails-disk": "~0.10.1",
+    "sails": "~0.11.0",
+    "sails-disk": "~0.10.0",
     "sails-mysql": "~0.10.3",
     "sails-mongo": "~0.10.1",
     "sails-redis": "~0.10.3",
