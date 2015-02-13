@@ -3,18 +3,6 @@ Ground Zero
 
 Another Sails.js + Angular.js boilerplate
 
-Usage
------
-```shell
-wget https://github.com/JerryYangJin/zero/archive/master.zip zero.zip
-unzip zero.zip
-cd zero
-git init
-npm install
-bower install
-sails lift
-```
-
 Dependencies
 ------------
 * Sails.js 0.11.0
@@ -23,13 +11,8 @@ Dependencies
 * Font Awesome 4.3.0
 * jQuery 2.1.3
 
-
-Minification Error
-------------------
-Production mode does not work for now due to minification, awaiting fix from angular-ui.
-
-Changes made on top of sails project
-------------------------------------
+Key Points
+----------
 * Add bower.json to install dependencies like angular, bootstrap
 
 * Register new task bower to copy files to assets
@@ -57,8 +40,6 @@ module.exports = function (grunt) {
 bower: {
   files: [
   { // copy js library
-    expand:true,
-    flatten: true,
     cwd: 'bower_components',
     src: [
     'angular/angular.js',
@@ -67,21 +48,16 @@ bower: {
     ],
     dest: 'assets/js/dependencies'
   }
-
 ```
-
 * Update layout.ejs, homepage.ejs for angular
 
 ```html
 <html ng-app="zero">
-<head>
-<base href="/">
-```
 
-```html
+<base href="/">
+
 <div ng-view></div>
 ```
-
 * Config js injection order
 
 ```js
