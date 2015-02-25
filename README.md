@@ -5,11 +5,16 @@ Another Sails.js + Angular.js boilerplate
 
 Dependencies
 ------------
-* Sails.js 0.11.0
-* Angular.js 1.3.13
-* Bootstrap 3.3.2
-* Font Awesome 4.3.0
-* jQuery 2.1.3
+| Name | Version |
+| ----:|:---------|
+| Sails | 0.11.0 |
+| Angular | 1.3.13 |
+| UI Router | 0.2.13 |
+| angularSails | ? |
+| Bootstrap | 3.3.2 |
+| Font Awesome | 4.3.0 |
+| jQuery | 2.1.3 |
+| lodash | 3.3.1 |
 
 Key Points
 ----------
@@ -56,7 +61,7 @@ bower: {
 
 <base href="/">
 
-<div ng-view></div>
+<div ui-view></div>
 ```
 * Config js injection order
 

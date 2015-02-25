@@ -57,10 +57,6 @@ angular.module('zero',['ui.router','sails.io'])
         url: '/phone',
         templateUrl: 'views/settings/phone.html',
         controller: 'SettingsController'
-    })
-
-
-  //$locationProvider.html5Mode(true);
-
+    });
 
 }]);

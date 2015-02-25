@@ -1,6 +1,5 @@
 angular.module('zero')
-.controller('IndexController',[function(){
+.controller('IndexController', ['Nav',function(Nav){
   "use strict";
-
 
 }]);
