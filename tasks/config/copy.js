@@ -43,9 +43,8 @@ module.exports = function(grunt) {
 						//'angular-route/angular-route.js',
 						'angular-ui-router/release/angular-ui-router.js',
 						//'angular-sanitize/angular-sanitize.js',
-						//'angularSails/dist/ngsails.io.js',
+						'angularSails/dist/ngsails.io.js',
 						'bootstrap/dist/js/bootstrap.js',
-						//'lodash/lodash.js',
 						'jquery/dist/jquery.js'
 					],
 					dest: 'assets/js/dependencies'

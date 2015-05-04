@@ -8,13 +8,12 @@ Dependencies
 | Name | Version |
 | ----:|:---------|
 | Sails | 0.11.0 |
-| Angular | 1.3.13 |
-| UI Router | 0.2.13 |
-| angularSails | ? |
-| Bootstrap | 3.3.2 |
+| Angular | 1.3.15 |
+| UI Router | 0.2.14 |
+| angularSails | 0.11.2 |
+| Bootstrap | 3.3.4 |
 | Font Awesome | 4.3.0 |
-| jQuery | 2.1.3 |
-| lodash | 3.3.1 |
+| jQuery | 2.1.4 |
 
 Key Points
 ----------

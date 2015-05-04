@@ -60,7 +60,7 @@ angular.module('angularSails.io', [])
  */
     .constant('$$sailsSDKParams', {
 
-        version: '0.10.0',  // TODO: pull this automatically from package.json during build.
+        version: '0.11.0',  // TODO: pull this automatically from package.json during build.
         platform: typeof module === 'undefined' ? 'browser' : 'node',
         language: 'javascript',
         flavor: 'angular'
@@ -412,6 +412,7 @@ angular.module('angularSails.io', [])
         }
     });
 
+
 /**
  * @ngDoc function
  * @name angularSails.io.SailsResponse
@@ -559,8 +560,6 @@ function $sailsSocketProvider() {
              * @description
              * The `$sailsSocket` service is the core service that facilitates communication with sails via socket.io
              *
-             *
-             * For a higher level of abstraction, please check out the $sailsResource service.
              *
              * The $sailsSocket API is based on the deferred/promise APIs exposed by
              * the $q service. While for simple usage patterns this doesn't matter much, for advanced usage
@@ -1193,7 +1192,11 @@ function $sailsSocketProvider() {
 
                     angular.forEach(value, function(v) {
                         if (isObject(v)) {
+                          if (isDate(v)) {
+                            v = v.toIsoString();
+                          } else {
                             v = toJson(v);
+                          }
                         }
                         parts.push(encodeUriQuery(key) + '=' +
                             encodeUriQuery(v));
@@ -1210,6 +1213,7 @@ function $sailsSocketProvider() {
 }
 
 angular.module('sails.io', []).provider('$sailsSocket',$sailsSocketProvider).provider('$sailsSocketBackend',sailsBackendProvider);
+
 'use strict';
 
 function createSailsBackend($browser, $window, $injector, $q, $timeout){
@@ -1254,14 +1258,20 @@ function createSailsBackend($browser, $window, $injector, $q, $timeout){
         url = url || $browser.url();
 
 
-        $window.io.socket[method.toLowerCase()](url,fromJson(post),socketResponse);
+        $window.io.socket.request({
+            method: method.toLowerCase(),
+            url: url,
+            data: fromJson(post),
+            headers: headers
+        }, socketResponse);
 
     }
 
     //TODO normalize http paths to event names
     connection.subscribe = function(event,handler){
-        $window.io.socket.on(event,tick($window.io.socket,handler));
-        return connection;
+        var callback = tick($window.io.socket,handler);
+        $window.io.socket.on(event,callback);
+        return angular.bind($window.io.socket, $window.io.socket.removeListener, event, callback);
     }
 
     return connection;
@@ -1278,8 +1288,8 @@ function createSailsBackend($browser, $window, $injector, $q, $timeout){
  * Service used by the $sailsSocket that delegates to a
  * Socket.io connection (or in theory, any connection type eventually)
  *
- * You should never need to use this service directly, instead use the higher-level abstractions:
- * $sailsSocket or $sailsResource.
+ * You should never need to use this service directly, instead use the higher-level abstraction:
+ * $sailsSocket.
  *
  * During testing this implementation is swapped with $sailsMockBackend
  *  which can be trained with responses.
@@ -1289,7 +1299,6 @@ function sailsBackendProvider() {
         return createSailsBackend($browser,$window, $injector, $q,$timeout);
     }];
 }
-
 
 
 'use strict';
