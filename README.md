@@ -9,7 +9,7 @@ Dependencies
 | ----:|:---------|
 | Sails | 0.11.0 |
 | Angular | 1.3.15 |
-| UI Router | 0.2.14 |
+| UI Router | 0.2.15 |
 | angularSails | 0.11.2 |
 | Bootstrap | 3.3.4 |
 | Font Awesome | 4.3.0 |
