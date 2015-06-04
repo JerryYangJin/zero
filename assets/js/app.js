@@ -17,6 +17,12 @@ angular.module('zero',['ui.router','sails.io'])
         controller: 'IndexController'
     })
 
+    .state('console', {
+        url: '/console',
+        templateUrl: 'views/console.html',
+        controller: 'ConsoleController'
+    })
+
     .state('server', {
         url: '/server',
         templateUrl: 'views/server.html',
